@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>خانه</title>
+  <link rel="stylesheet" href="t11_style.css">
+</head>
+<body>
+<header>
+  <h1> وبسایت ثمین صالحی</h1>
+  <nav>
+    <a href="t11_index.html">خانه</a>
+    <a href="t11_about.html">درباره من</a>
+    <a href="t11_contact.html">تماس</a>
+  </nav>
+</header>
+
+<div class="main-container">
+  <iframe src="https://calendar.google.com/calendar/embed?src=fa.ir%23holiday%40group.v.calendar.google.com&ctz=Asia/Tehran"
+          class="calendar" frameborder="0" scrolling="no"></iframe>
+
+  <div class="content">
+    <h2>همراهان عزیز خوش آمدید!</h2>
+    <p>
+      توی این تمرین قراره یه قدم جلوتر از تمرین قبلی برم و افزودن تقویم و to do list  رو یاد بگیرم.
+    </p>
+    <p>
+       «وقتی تلاش می‌کنیم تقویم فارسی را در صفحه وب از طریق iframe نمایش دهیم، مرورگر خطای ۴۰۴ یا عدم بارگذاری محتوا نشان می‌دهد. علت اصلی این است که سایت منبع یا اجازه‌ی بارگذاری در iframe را نمی‌دهد (Cross-Origin Resource Sharing / X-Frame-Options محدود شده) و یا مسیر URL تغییر کرده است. بنابراین محتوا مستقیماً قابل نمایش در صفحه ما نیست و نیاز به راه‌حل جایگزین، مثل استفاده از API رسمی سایت یا embed کردن یک ویجت دیگر، داریم.»
+    </p>
+    <p>دوست داشتی ،می‌تونی to do list رو تستش کنی!</p>
+
+    <div class="todo-container">
+      <h3>To Do List</h3>
+      <input type="text" id="todo-input" placeholder="کار جدید">
+      <button id="add-btn">افزودن</button>
+      <ul id="todo-list"></ul>
+    </div>
+  </div>
+</div>
+
+<script>
+  const input = document.getElementById('todo-input');
+  const list = document.getElementById('todo-list');
+  const addBtn = document.getElementById('add-btn');
+
+  // بارگذاری آیتم‌های ذخیره شده
+  const todos = JSON.parse(localStorage.getItem('todos') || '[]');
+  todos.forEach(todo => {
+    addTodoItem(todo);
+  });
+
+  addBtn.addEventListener('click', () => {
+    const value = input.value.trim();
+    if (!value) return;
+    addTodoItem(value);
+    todos.push(value);
+    localStorage.setItem('todos', JSON.stringify(todos));
+    input.value = '';
+  });
+
+  function addTodoItem(text) {
+    const li = document.createElement('li');
+    li.textContent = text;
+    const delBtn = document.createElement('button');
+    delBtn.textContent = 'حذف';
+    delBtn.addEventListener('click', () => {
+      li.remove();
+      const index = todos.indexOf(text);
+      if (index > -1) {
+        todos.splice(index, 1);
+        localStorage.setItem('todos', JSON.stringify(todos));
+      }
+    });
+    li.appendChild(delBtn);
+    list.appendChild(li);
+  }
+</script>
+</body>
+</html>
