@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>t12 - خانه</title>
+  <link rel="stylesheet" href="t12_style.css">
+</head>
+<body>
+  <header>
+    <h1>وبسایت ثمین صالحی</h1>
+    <nav>
+      <ul>
+        <li><a href="t12_index.html" class="active">خانه</a></li>
+        <li><a href="t12_about.html">درباره من</a></li>
+        <li><a href="t12_contact.html">تماس</a></li>
+        <li><a href="t12_gallery.html">گالری</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="intro">
+      <h2>خانه</h2>
+      <p>از کجا آمده‌ام آمدنم بهر چه بود؟</p>
+      <p>به کجا میروم آخر؟ ننمایی وطنم</p>
+    </section>
+
+    <section class="content-row">
+      <!-- سمت چپ: To-Do List -->
+      <div class="todo-container">
+        <h3>کیست در گوش که او می‌ شنود آوازم؟</h3>
+        <input type="text" id="taskInput" placeholder="در انتظار شنیدن آوازی دیگر...">
+        <button onclick="addTask()">اضافه کن</button>
+        <ul id="taskList"></ul>
+      </div>
+
+      <!-- سمت راست: تقویم -->
+      <div class="calendar-container">
+        <iframe src="https://calendar.google.com/calendar/embed?src=fa.ir%23holiday%40group.v.calendar.google.com&ctz=Asia%2FTehran"
+                style="border:0" width="300" height="350" frameborder="0" scrolling="no"></iframe>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>🌐</p>
+    <div class="social">
+       <a href="https://t.me/samn_salehi" target="_blank">تلگرام</a> |
+    <a href="https://wa.me/+989019358423" target="_blank">واتس اپ</a> |
+    <a href="https://github.com/samin2025" target="_blank">گیت‌هاب</a>
+    </div>
+  </footer>
+
+  <script src="t12_script.js"></script>
+</body>
+</html>

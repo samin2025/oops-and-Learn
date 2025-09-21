@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>t12 - گالری</title>
+  <link rel="stylesheet" href="t12_style.css">
+</head>
+<body>
+  <header>
+    <h1>وبسایت ثمین صالحی</h1>
+    <nav>
+      <ul>
+        <li><a href="t12_index.html">خانه</a></li>
+        <li><a href="t12_about.html">درباره من</a></li>
+        <li><a href="t12_contact.html">تماس</a></li>
+        <li><a href="t12_gallery.html" class="active">گالری</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2>گالری تصاویر</h2>
+    <div class="gallery">
+      <img src="t12_gallery/1.jpg" onclick="openLightbox(this)">
+      <img src="t12_gallery/2.jpg" onclick="openLightbox(this)">
+      <img src="t12_gallery/3.jpg" onclick="openLightbox(this)">
+      <img src="t12_gallery/4.jpg" onclick="openLightbox(this)">
+      <img src="t12_gallery/5.jpg" onclick="openLightbox(this)">
+      <img src="t12_gallery/6.jpg" onclick="openLightbox(this)">
+    </div>
+  </main>
+
+  <!-- لایت‌باکس -->
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <span class="close">&times;</span>
+    <img id="lightbox-img">
+  </div>
+
+  <footer>
+    <p>🌐</p>
+    <div class="social">
+       <a href="https://t.me/samn_salehi" target="_blank">تلگرام</a> |
+    <a href="https://wa.me/+989019358423" target="_blank">واتس اپ</a> |
+    <a href="https://github.com/samin2025" target="_blank">گیت‌هاب</a>
+    </div>
+  </footer>
+
+  <script src="t12_script.js"></script>
+</body>
+</html>
