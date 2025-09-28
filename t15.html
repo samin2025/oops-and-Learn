@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>t15 - فرم تماس و نظرات پیشرفته</title>
+  <link rel="stylesheet" href="t15_style.css">
+</head>
+<body>
+  <header>
+    <h1>وبسایت ثمین صالحی</h1>
+
+  </header>
+
+  <main>
+    <section class="contact-form">
+      <h2>فرم تماس</h2>
+      <form id="contactForm">
+        <label for="name">نام:</label>
+        <input type="text" id="name" required>
+
+        <label for="email">ایمیل:</label>
+        <input type="email" id="email" required>
+
+        <label for="message">پیام:</label>
+        <textarea id="message" required></textarea>
+
+        <button type="submit">ارسال</button>
+      </form>
+      <p id="formStatus"></p>
+    </section>
+
+    <!-- بخش نظرات -->
+    <section class="comments-section">
+      <h2>نظرات دوستان همراه</h2>
+      <form id="commentForm">
+        <label for="commentInput">لطفا نظرات ارزشمندتون رو برای ما ارسال کنید:</label>
+        <textarea id="commentInput" required></textarea>
+
+        <label for="rating">امتیاز شما:</label>
+        <div id="ratingStars">★★★★★</div>
+
+        <button type="submit">ثبت نظر</button>
+      </form>
+
+      <ul id="commentsList"></ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>💻 تمرین 15ام ثمین صالحی</p>
+    <div class="social">
+      <a href="https://t.me/samin_salehi" target="_blank">تلگرام</a> |
+      <a href="https://wa.me/+989019358423" target="_blank">واتس‌اپ</a> |
+      <a href="https://github.com/samin2025" target="_blank">گیت‌هاب</a>
+    </div>
+  </footer>
+
+  <script src="t15_script.js"></script>
+</body>
+</html>
