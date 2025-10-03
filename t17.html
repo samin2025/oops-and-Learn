@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>معکوس‌شمار مانتراساز ثمین</title>
+  <link rel="stylesheet" href="t17_style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>⏳ معکوس‌شمار مانتراساز ثمین</h1>
+    <div id="timer">00:00:00</div>
+
+    <div class="inputs">
+      <input type="number" id="minutes" placeholder="دقیقه" min="0">
+      <input type="number" id="seconds" placeholder="ثانیه" min="0" max="59">
+    </div>
+
+    <button id="startPauseBtn">شروع</button>
+    <button id="resetBtn">ریست</button>
+
+    <p id="message"></p>
+  </div>
+
+  <audio id="alarmSound" src="alarm.mp3" preload="auto"></audio>
+
+  <script src="t17_script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+body {
+  margin: 0;
+  font-family: "Tahoma", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #4c2be2c2, #0fe645c5);
+  color: rgba(34, 8, 105, 0.712);
+  text-align: center;
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  width: 90%;
+  max-width: 400px;
+}
+
+h1 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+#timer {
+  font-size: 3rem;
+  margin: 20px 0;
+  font-weight: bold;
+}
+
+.inputs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+input {
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  text-align: center;
+  font-size: 1rem;
+  width: 100px;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 10px 5px;
+  border: none;
+  border-radius: 10px;
+  background: #2b035f9f;
+  color: rgb(214, 212, 100);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #03681c;
+}
+
+#message {
+  margin-top: 15px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: rgb(32, 100, 5);
+}
+
+@media (max-width: 600px) {
+  #timer {
+    font-size: 2.5rem;
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
+  input {
+    width: 80px;
+  }
+}
