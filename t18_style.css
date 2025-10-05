@@ -1,0 +1,150 @@
+/* پایه */
+body {
+    font-family: sans-serif;
+    background: rgb(43, 41, 41);
+    color: #fff;
+    margin: 0;
+    padding: 20px;
+}
+
+/* هدر */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+header h1 {
+    font-size: 1.8rem;
+    color: #eb7575ff;
+    margin: 0;
+}
+
+/* بخش‌ها */
+section {
+    background: rgb(71, 71, 71);
+    padding: 16px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+}
+
+/* فرم‌ها و دکمه‌ها */
+input,
+button,
+select {
+    padding: 8px;
+    margin: 4px;
+    border: none;
+    border-radius: 6px;
+}
+button {
+    cursor: pointer;
+    background: #ff4081;
+    color: #fff;
+}
+
+/* کارت‌های اهداف */
+#goalsList .goal-card {
+    background: #222;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 8px;
+}
+
+/* نمودار پیشرفت */
+.progress-ring {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: 8px auto;
+}
+.progress-ring circle {
+    fill: none;
+    stroke-width: 10;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+}
+.progress-ring-bg {
+    stroke: rgba(255, 255, 255, 0.2);
+}
+.progress-ring-fg {
+    stroke: #ff4081;
+    stroke-dasharray: 439.82;
+    stroke-dashoffset: 439.82;
+    transition: stroke-dashoffset 0.5s linear;
+}
+.progress-ring-text {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+/* نمودار میله‌ای */
+.bar-chart {
+    display: flex;
+    width: 100%;
+    height: 25px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    overflow: hidden;
+    margin: 12px 0;
+}
+.bar-segment {
+    height: 100%;
+    text-align: center;
+    line-height: 25px;
+    color: #000;
+    font-size: 0.7rem;
+}
+
+/* جزئیات ورودی‌ها */
+.entry-details {
+    font-size: 0.85rem;
+    margin-top: 6px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* فوتر */
+footer {
+    text-align: center;
+    margin-top: 20px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.85rem;
+}
+footer a {
+    color: #ffd54f;
+    text-decoration: none;
+    margin: 0 8px;
+}
+
+/* مودال تبریک */
+#congratsModal {
+    position: fixed;
+    inset: 0;
+    display: none;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+#congratsModal.active {
+    display: flex;
+}
+#congratsModal h2 {
+    margin-bottom: 16px;
+    color: #ffd54f;
+    font-size: 1.5rem;
+}
+#congratsModal button {
+    padding: 10px 20px;
+    border-radius: 6px;
+    border: none;
+    background: #ff4081;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+}
