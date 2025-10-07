@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>t19 - مترجم انگیزشی</title>
+  <link rel="stylesheet" href="t19_style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🌍 مترجم انگیزشی</h1>
+
+    <div class="translator-box">
+      <textarea id="inputText" placeholder="متن خود را بنویس..."></textarea>
+
+      <div class="lang-select">
+        <select id="fromLang">
+          <option value="en">انگلیسی</option>
+          <option value="fa" selected>فارسی</option>
+          <option value="es">اسپانیایی</option>
+          <option value="fr">فرانسوی</option>
+          <option value="de">آلمانی</option>
+        </select>
+        <span>⟶</span>
+        <select id="toLang">
+          <option value="fa">فارسی</option>
+          <option value="en" selected>انگلیسی</option>
+          <option value="es">اسپانیایی</option>
+          <option value="fr">فرانسوی</option>
+          <option value="de">آلمانی</option>
+        </select>
+      </div>
+
+      <button id="translateBtn">ترجمه کن 🚀</button>
+      <div id="loading" class="hidden">⏳ در حال ترجمه...</div>
+      <div id="resultBox"></div>
+      <div id="motivation" class="hidden"></div>
+    </div>
+  </div>
+
+  <script src="t19_script.js"></script>
+</body>
+</html>
