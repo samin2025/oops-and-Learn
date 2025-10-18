@@ -1,0 +1,374 @@
+/* 🎨 -------------------------------
+   رنگ‌ها، سایه‌ها و تنظیمات کلی
+----------------------------------*/
+:root {
+  --bg-0: #06121a;                          /* رنگ پس‌زمینه اصلی */
+  --bg-1: rgba(255, 255, 255, 0.03);        /* رنگ لایه روشن */
+  --glass: rgba(255, 255, 255, 0.04);       /* افکت شیشه‌ای */
+  --muted: rgba(255, 255, 255, 0.72);       /* متن کم‌رنگ */
+  --accent: #7c4dff;                         /* رنگ اصلی بنفش */
+  --accent-2: #00e5ff;                       /* رنگ فرعی آبی */
+  --radius: 12px;                            /* گردی گوشه‌ها */
+  --shadow: 0 10px 30px rgba(2, 6, 23, 0.6); /* سایه کارت‌ها */
+  --gap: 14px;                               /* فاصله بین عناصر */
+}
+
+/* 📦 -------------------------------
+   تنظیمات پایه
+----------------------------------*/
+* { box-sizing: border-box; }
+
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  padding: 20px;
+  direction: rtl;
+  font-family: "Vazirmatn", Tahoma, system-ui, sans-serif;
+  color: #fff;
+  background: linear-gradient(180deg, #04101a 0%, var(--bg-0) 60%);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 🧱 -------------------------------
+   ساختار کلی و نوار بالا
+----------------------------------*/
+.app {
+  max-width: 1150px;
+  margin: 0 auto;
+}
+
+.topbar {
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+.topbar h1 {
+  margin: 0;
+  color: var(--accent);
+  font-size: 1.5rem;
+}
+
+.topbar .subtitle {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* 🧩 -------------------------------
+   چیدمان صفحه (Grid Layout)
+----------------------------------*/
+.layout {
+  display: grid;
+  grid-template-columns: 360px 1fr 360px;
+  gap: var(--gap);
+  align-items: start;
+}
+
+@media (max-width: 1100px) {
+  .layout {
+    grid-template-columns: 1fr;
+    padding-bottom: 20px;
+  }
+}
+
+/* 🪟 -------------------------------
+   کارت‌های محتوا
+----------------------------------*/
+.card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius: var(--radius);
+  border: 1px solid var(--glass);
+  box-shadow: var(--shadow);
+  padding: 16px;
+}
+
+/* 🎚 -------------------------------
+   کارت ورودی‌ها (اسلایدر و مقدار)
+----------------------------------*/
+.input-card h2 {
+  margin: 0 0 8px;
+}
+
+.sliders {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.slider-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.slider-label {
+  width: 110px;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.range { flex: 1; }
+
+.slider-value {
+  width: 46px;
+  text-align: center;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+/* 🔘 -------------------------------
+   استایل اسلایدرها
+----------------------------------*/
+input[type="range"] {
+  appearance: none;
+  height: 6px;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.06);
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb,
+input[type="range"]::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.6);
+}
+
+/* 📝 -------------------------------
+   فیلد یادداشت
+----------------------------------*/
+textarea#note {
+  width: 100%;
+  min-height: 80px;
+  margin-top: 8px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.03);
+  background: transparent;
+  color: #fff;
+  resize: vertical;
+}
+
+textarea::placeholder {
+  color: rgba(255,255,255,0.38);
+}
+
+/* ⚙️ -------------------------------
+   دکمه‌ها و کنترل‌ها
+----------------------------------*/
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.btn {
+  padding: 9px 12px;
+  border: 0;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+  background: rgba(255,255,255,0.02);
+  color: #fff;
+}
+
+.btn.primary {
+  background: linear-gradient(90deg, var(--accent), #ff6ec7);
+  color: #0b0310;
+}
+
+.btn.ghost {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.04);
+  color: var(--muted);
+}
+
+/* 📊 -------------------------------
+   کارت تحلیل و چارت‌ها
+----------------------------------*/
+.analysis-card .analysis-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.analysis-card .charts {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.chart-wrap {
+  flex: 1;
+  min-width: 260px;
+  height: 260px;
+  border-radius: 8px;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.analysis-card canvas {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.summary {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+/* 🧾 -------------------------------
+   کارت لیست و ورودی‌ها
+----------------------------------*/
+.list-card .list-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.entries {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 540px;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.01), transparent);
+  border: 1px solid rgba(255,255,255,0.02);
+}
+
+.entry .left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.mood-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.text {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.entry button.del {
+  background: transparent;
+  border: 0;
+  color: #ff8a8a;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+/* 💬 -------------------------------
+   بازخورد (Feedback)
+----------------------------------*/
+.feedback {
+  margin-top: 8px;
+  color: var(--accent-2);
+  font-weight: 700;
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+
+/* 🪟 -------------------------------
+   مودال (پنجره پاپ‌آپ)
+----------------------------------*/
+.modal {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: rgba(0,0,0,0.6);
+  z-index: 90;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-card {
+  width: 90%;
+  max-width: 760px;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.03);
+  background: linear-gradient(180deg, #071827, #04121a);
+}
+
+.modal-close {
+  float: left;
+  background: transparent;
+  border: 0;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+#exportArea {
+  width: 100%;
+  height: 240px;
+  padding: 8px;
+  border-radius: 8px;
+  background: #02121a;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.04);
+}
+
+/* ⚓ -------------------------------
+   فوتر (پایین صفحه)
+----------------------------------*/
+.footer {
+  text-align: center;
+  margin-top: 18px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* ⏰ -------------------------------
+   ورودی‌های زمان
+----------------------------------*/
+.time-inputs {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.time-inputs label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}

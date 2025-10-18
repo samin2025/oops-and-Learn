@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>t20 — دماسنج احساسی</title>
+  <link rel="stylesheet" href="t20_style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <h1>احساس سنج ثمین</h1>
+      <p class="subtitle">ثبت احساسات روزانه</p>
+    </header>
+
+    <main class="layout">
+      <section class="card input-card">
+        <h2>ثبت نمونه احساسی (امروز)</h2>
+        <div class="sliders" id="slidersContainer"></div>
+        <textarea id="note" placeholder="یادداشت کوتاه..."></textarea>
+        <div class="controls">
+          <button id="recordBtn" class="btn primary">ثبت نمونه</button>
+          <button id="exportBtn" class="btn">خروجی JSON</button>
+          <button id="clearBtn" class="btn ghost">حذف همه</button>
+        </div>
+        <div id="feedback" class="feedback"></div>
+      </section>
+
+      <section class="card analysis-card">
+        <div class="analysis-header">
+          <h2>تحلیل روزانه</h2>
+          <div class="date-controls">
+            <label for="dateView">مشاهده برای تاریخ:</label>
+            <input type="date" id="dateView">
+          </div>
+        </div>
+        <div class="charts">
+          <div class="chart-wrap"><canvas id="pieChart"></canvas></div>
+          <div class="chart-wrap"><canvas id="lineChart"></canvas></div>
+        </div>
+        <div id="summary" class="summary">
+          <div id="dominant">حس غالب: —</div>
+          <div id="samplesCount">نمونه‌ها: 0</div>
+        </div>
+      </section>
+
+      <section class="card list-card">
+        <h2>دفتر نمونه‌ها</h2>
+        <div class="list-controls">
+          <label for="filterDate">فیلتر بر اساس تاریخ:</label>
+          <input type="date" id="filterDate">
+          <button id="filterBtn" class="btn">اعمال</button>
+          <button id="clearFilterBtn" class="btn ghost">حذف فیلتر</button>
+        </div>
+        <ul id="entriesList" class="entries"></ul>
+      </section>
+    </main>
+
+    <footer class="footer">ثمین ساخت-2025</footer>
+  </div>
+
+  <div id="modalExport" class="modal hidden">
+    <div class="modal-card">
+      <button id="modalClose" class="modal-close">✕</button>
+      <h3>خروجی JSON</h3>
+      <textarea id="exportArea" readonly></textarea>
+      <div class="modal-actions">
+        <button id="downloadJson" class="btn primary">دانلود JSON</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="t20_script.js"></script>
+</body>
+</html>
